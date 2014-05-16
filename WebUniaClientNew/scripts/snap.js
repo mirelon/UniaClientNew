@@ -309,7 +309,9 @@
                 },
                 dragging: function(e) {
                     if (cache.isDragging && settings.touchToDrag) {
-
+                        //prevent dragging on map
+                        if($(e.srcElement).parents('.scrollBottom').length);
+                            return;
                         var thePageX = utils.page('X', e),
                             thePageY = utils.page('Y', e),
                             translated = cache.translation,
