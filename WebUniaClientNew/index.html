@@ -22,7 +22,8 @@
 </head>
 <body onload="onLoad()">
 
-<div class='waitingDiv'>&nbsp;</div>   
+<div class='waitingDiv'>&nbsp;</div>
+<div style=" display:none; height:60px ;text-align:center" class="domcek"><a href="index.html"><p style="color:grey"><img src="images/misc/1.png" style="width:30px; height:30px; margin-top:5px; margin-bottom:-8px;"><br>DOMOV</p></a></div>   
 <div class="page-coach">
 	<div class="portrait-coach">
         <span style="top:0px; left:28px;" class="coach-arrow arrow1">
@@ -205,7 +206,7 @@
 <form id="orderForm-form">
     <fieldset id="fTaxiCompany">
     <legend>Taxislužba</legend>
-        <input type="hidden" id="TaxiCompanyLocalId" name="TaxiCompanyLocalId" value="{{this.TaxiCompanyLocalId}}"/>
+        <input type="hidden" id="TaxiCompanyLocalId" name="TaxiCompanyLocalId" value="2a6e8bd1-f425-4758-821c-de49f89d97e3Bratislava"/>
     <div class="radiolist">
         {{#each this.companiesItems}}
         <div data_localId="{{localId}}" class="radio{{#if selected}} selected{{/if}}">{{Title}} - {{Town}}</div>

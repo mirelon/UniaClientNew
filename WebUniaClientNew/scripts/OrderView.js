@@ -1,4 +1,6 @@
 ﻿var OrderView = function () {
+$('.page-header').css('display', 'none');
+        $('.page-header').hide()
     this.index = 5;
     this.order = {};
     this.initialize = function() {
@@ -161,6 +163,9 @@
     };
 
     this.loadForm = function () {
+        
+	$('.page-header').css('display', 'none');
+        $('.page-header').hide()
         var self = this;
         this.order = Service.orders.Current;
         this.order.geocodeStatus = false;

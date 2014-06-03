@@ -4,18 +4,27 @@ var g_OrdersRefreshCount = 0;
 
 
 var OrdersView = function () {
+$('.page-header').css('display', 'none');
+        $('.page-header').hide()
+$('.domcek').css('display', 'inline');
+        
     this.index = 1;
     this.initialize = function() {
         this.el = $('<div/>');
     };
 
     this.render = function () {
+$('.page-header').css('display', 'none');
+        $('.page-header').hide()
+$('.domcek').css('display', 'inline');
         this.el.html(OrdersView.template());
         $("#taxiHeader").click(function () { app.refreshData(["orders", "transporters"]); });
         return this;
     };
 
     this.loadData = function () {
+$('.page-header').css('display', 'none');
+        $('.page-header').hide()
         var self = this;
 
         $('.orders-list').hide();
@@ -72,6 +81,9 @@ var OrdersView = function () {
     };
 
     this.onShow = function () {
+$('.page-header').css('display', 'none');
+        $('.page-header').hide()
+$('.domcek').css('display', 'inline');
         if (!navigator.app)
             $('#appExit').hide();
         this.loadData();
