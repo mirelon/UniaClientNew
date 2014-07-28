@@ -200,6 +200,7 @@ $('.page-header').css('display', 'none');
                 });
             }
             $("#orderForm").html(OrderView.templateForm(this.order));
+
             $("#orderWaiting").hide();
             $('input').on('focus', function () {
                 document.body.scrollTop = $(this).offset().top;
@@ -225,6 +226,8 @@ $('.page-header').css('display', 'none');
             $("#orderForm").show();
             $("#orderSave").removeClass("transparent");
             $(".radio").click(function () { self.radioCompanyClick($(this)); });
+            
+            new iScroll('orderForm');
     };
     this.radioCompanyClick = function (btn) {
         var localId = btn.attr("data_localId");

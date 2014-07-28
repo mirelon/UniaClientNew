@@ -65,13 +65,13 @@
             $(".waitingDiv").html(t);
     },
     end: function (callback) {
-        if (navigator.app) {
-            app.showConfirm("Ukončiť aplikáciu?", "Ukončenie aplikácie", function () {
-                app.log("app.exitApp");
-                navigator.app.exitApp();
-            }, callback);
-        }
-        else callback();
+            if (navigator.app) {
+                        app.showConfirm("Ukončiť aplikáciu?", "Ukončenie aplikácie", function () {
+                            app.log("app.exitApp");
+                            navigator.app.exitApp();
+                        }, callback);
+            }
+            else callback();
     },
     registerEvents: function () {
         app.log("app.registerEvents");
@@ -269,7 +269,8 @@ function onLoad() {
         document.addEventListener("deviceready", function () { app.initialize(); }, false);
     } else {
         app.initialize();
-    }    
+    }
+    
 }
 
 function fillEndCity()
@@ -279,4 +280,6 @@ function fillEndCity()
     if (startc == null) return;
     if (endc == null || endc.value=='')
         endc.value = startc.value;
+
+    
 }
