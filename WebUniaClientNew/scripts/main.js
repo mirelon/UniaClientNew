@@ -65,13 +65,13 @@
             $(".waitingDiv").html(t);
     },
     end: function (callback) {
-            if (navigator.app) {
-                        app.showConfirm("Ukončiť aplikáciu?", "Ukončenie aplikácie", function () {
-                            app.log("app.exitApp");
-                            navigator.app.exitApp();
-                        }, callback);
-            }
-            else callback();
+        if (navigator.app) {
+            app.showConfirm("Ukončiť aplikáciu?", "Ukončenie aplikácie", function () {
+                app.log("app.exitApp");
+                navigator.app.exitApp();
+            }, callback);
+        }
+        else callback();
     },
     registerEvents: function () {
         app.log("app.registerEvents");
@@ -224,38 +224,38 @@
             element: document.getElementById('content')
         });
         
-	$('body').on('click', '.deploy-sidebar, .page-header, .close-icon', function(){
-		if( snapper.state().state=="left" ){
-			snapper.close();
-		} else {
-			snapper.open('left');
-		}
-		return false;
-	});
-	
-	$('body').on('click', '.page-content', function(){
-		snapper.close();
-	
-	});
-			
-	$('.bxslider').bxSlider({
-		pager:false,
-		controls:true,
-		touchEnabed:true,
-		infiniteLoop: true,
-		preventDefaultSwipeX:true
-	});	
-	
-	$('.nav-coach').click(function(){
-		$('.page-coach').fadeIn();
-		document.ontouchmove = function(event){ event.preventDefault();}
-		snapper.close();
-	});
-	
-	$('.page-coach').click(function(){
-		$('.page-coach').fadeOut();
-		document.ontouchmove = function(event){ event.allowDefault();}
-	});
+        $('body').on('click', '.deploy-sidebar, .page-header, .close-icon', function(){
+            if( snapper.state().state=="left" ){
+                snapper.close();
+            } else {
+                snapper.open('left');
+            }
+            return false;
+        });
+        
+        $('body').on('click', '.page-content', function(){
+            snapper.close();
+        
+        });
+                
+        $('.bxslider').bxSlider({
+            pager:false,
+            controls:true,
+            touchEnabed:true,
+            infiniteLoop: true,
+            preventDefaultSwipeX:true
+        }); 
+        
+        $('.nav-coach').click(function(){
+            $('.page-coach').fadeIn();
+            document.ontouchmove = function(event){ event.preventDefault();}
+            snapper.close();
+        });
+        
+        $('.page-coach').click(function(){
+            $('.page-coach').fadeOut();
+            document.ontouchmove = function(event){ event.allowDefault();}
+        });
     },
 
     checkGPS: function () {
@@ -269,8 +269,7 @@ function onLoad() {
         document.addEventListener("deviceready", function () { app.initialize(); }, false);
     } else {
         app.initialize();
-    }
-    
+    }    
 }
 
 function fillEndCity()
@@ -280,6 +279,4 @@ function fillEndCity()
     if (startc == null) return;
     if (endc == null || endc.value=='')
         endc.value = startc.value;
-
-    
 }
